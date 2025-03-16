@@ -1,0 +1,348 @@
+@import "reset";
+@import "functions";
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.wrapper {
+    overflow: clip;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.bg-container {
+    background: url("../images/backgrounds/main-bg.jpg");
+    min-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 $safety-padding;
+    max-width: 1458px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.header .container {
+    padding: $standard-padding $safety-padding;
+
+    @media (max-width: 461px) {
+        padding-top: 50px;
+    }
+}
+
+.nav {
+    display: flex;
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .logo-text-container {
+            flex-grow: 0;
+        }
+
+        .links-container {
+            flex: 1 1 100%;
+            justify-content: center;
+        }
+
+        .logo-text-container {
+            margin-bottom: 40px;
+        }
+    }
+
+    @media (max-width: 585px) {
+        .links-list {
+            flex: 1 1 100%;
+            justify-content: center;
+        }
+
+        .links-container {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+}
+
+.links-container {
+    display: flex;
+    gap: 85px;
+}
+
+.logo-text-container {
+    flex-grow: 1;
+}
+
+.logo-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: getLineHeight(27, 27);
+}
+
+.links-list {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: getLineHeight(19.2, 16);
+    white-space: nowrap;
+
+    display: flex;
+    gap: 75px;
+    align-items: center;
+
+    & .links-list-element a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 461px) {
+        gap: 45px;
+    }
+
+    @media (max-width: 370px) {
+        gap: 30px;
+    }
+}
+
+.social-medias-links {
+    display: flex;
+    gap: 10px;
+}
+
+.hero-section {
+    padding-top: 141px;
+    // padding-bottom: 485px;
+    padding-left: $container-left-padding;
+
+    @media (max-width: 585px) {
+        padding-left: $standard-padding;
+    }
+
+    @media (max-width: 461px) {
+        padding-left: 50px;
+    }
+
+    @media (max-width: 370px) {
+        padding-left: 30px;
+    }
+}
+
+
+.hero-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: getLineHeight(72, 60);
+    margin-bottom: 27px;
+
+    @media (max-width: 461px) {
+        font-size: 40px;
+    }
+}
+
+.hero-subtitle {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: getLineHeight(26.4, 22);
+    letter-spacing: 6.6px;
+    text-transform: uppercase;
+
+    @media (max-width: 461px) {
+        font-size: 16px;
+    }
+}
+
+.footer .container {
+    padding-block: $standard-padding;
+}
+
+.footer-text-container {
+    padding-left: $container-left-padding;
+
+    @media (max-width: 585px) {
+        padding-left: $standard-padding;
+    }
+
+    @media (max-width: 461px) {
+        padding-left: 50px;
+    }
+
+    @media (max-width: 370px) {
+        padding-left: 30px;
+    }
+}
+
+.footer-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: getLineHeight(19.2, 16);
+}
+
+// potfolio.html
+
+.body {
+    background-color: rgba(8, 7, 7, 1);
+    height: 100%;
+}
+
+.last-works-section {
+    padding-top: 28px;
+}
+
+.last-works-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: getLineHeight(50.4, 42);
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.pictures-list {
+    max-width: 100%;
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 531px) {}
+}
+
+.pictures-list-element {
+    max-width: 463px;
+    max-height: 603px;
+    aspect-ratio: 463 / 603;
+    position: relative;
+
+    @media (max-width: 768px) {
+
+        &:nth-child(1),
+        &:nth-child(2) {
+            max-width: 48%;
+        }
+
+        &:nth-child(3) {
+            max-width: 48%;
+        }
+    }
+
+    @media (max-width: 531px) {
+        max-width: 100%;
+        max-height: none;
+        flex: 1 1 100%;
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+            max-width: 100%;
+        }
+    }
+}
+
+.pictures-list-element a {
+    height: 100%;
+    width: 100%;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+        box-shadow: 0px 0px 20px 0px rgba(62, 40, 255, 1);
+    }
+}
+
+.pictures-list-element a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.pictures-category-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: getLineHeight(38.4, 32);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    @media (min-width: 531px) and (max-width: 960px) {
+        font-size: 28px;
+    }
+}
+
+// portraits.html
+
+.portraits-section {
+    padding-top: 28px;
+    
+    @media (max-width: 425px) {
+        padding-top: 0;
+    }
+}
+
+.portraits-main-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 42px);
+    line-height: getLineHeight(50.4, 42);
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.portraits-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(670px, 1fr));
+    grid-template-rows: repeat(4, minmax(380px, 400px));
+    gap: 20px;
+
+    @media (max-width: 1430px) {
+        grid-template-columns: minmax(250px, 1fr);
+        grid-template-rows: repeat(6, minmax(200px, 1fr));
+    }
+}
+
+.portrait-list-element {
+    overflow: hidden;
+}
+
+.portrait-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.portraits-list .portrait-list-element .portrait-image {
+    aspect-ratio: 704 / 400;
+}
+
+.portraits-list .portrait-list-element:nth-child(2),
+.portraits-list .portrait-list-element:nth-child(4) {
+    grid-row: span 2;
+    aspect-ratio: 704 / 820;
+
+    @media (max-width: 1430px) {
+        grid-row: span 1;
+    }
+}
+
+.portraits-list .portrait-list-element:nth-child(4) .portrait-image,
+.portraits-list .portrait-list-element:nth-child(5) .portrait-image,
+.portraits-list .portrait-list-element:nth-child(6) .portrait-image {
+    transform: scaleX(-1);
+}
